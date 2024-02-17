@@ -5,7 +5,7 @@ const validateBody = (req, res, next) => {
     return res.status(400).json({ message: 'The field "title" is required!' });
   }
 
-  if (body.title == "") {
+  if (body.title == '') {
     return res
       .status(400)
       .json({ message: 'The field "title" cannot be empty!' });
