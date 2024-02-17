@@ -5,6 +5,13 @@ const getAllTasks = async () => {
   return tasks;
 };
 
+const createTask = async (task) => {
+  const { title } = task;
+  const [createdTask] = await connection.execute('INSERT INTO tasks (title) VALUES (?)', [title]);
+  return { insertedId: createdTask.insertId };
+};
+
 module.exports = {
   getAllTasks,
+  createTask
 };
