@@ -7,11 +7,12 @@ const getAllTasks = async () => {
 
 const createTask = async (task) => {
   const { title } = task;
+  const dateUTC = new Date(Date.now()).toUTCString();
   const [createdTask] = await connection.execute(
-    'INSERT INTO tasks (title) VALUES (?)',
-    [title]
+    'INSERT INTO tasks (title, status, created_at) VALUES (?, ?, ?)',
+    [title, 'pendente', dateUTC]
   );
-  return { insertedId: createdTask.insertId };
+  return { insertId: createdTask.insertId };
 };
 
 const deleteTask = async (taskId) => {
