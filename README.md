@@ -35,7 +35,7 @@
 ### First, we need to clone or download this repository.
 
 ```bash
-#Command to clone the repository
+#Command to clone the repository:
 
 $ git clone https://github.com/igopereira1/node-todolist.git
 ```
@@ -43,7 +43,8 @@ $ git clone https://github.com/igopereira1/node-todolist.git
 ### After cloning the repository, its recommended to create a MySQL container to be used by the application. To do this, just run the command below in the terminal.
 
 ```bash 
-#Command to create a MySQL container
+#Command to create a MySQL container:
+
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql
 ```
 
@@ -59,7 +60,7 @@ $ CREATE DATABASE todolist;
 
 
 ```bash
-#Command to create the table with its columns
+#Command to create the table with its columns:
 
 $ CREATE TABLE tasks(
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -72,6 +73,8 @@ $ CREATE TABLE tasks(
 ### In the root of the project there will be a file named ".env.example" this file contains 5 fields that will have to be filled in a file named ".env", just create this file or rename the example file. After that, just fill in the fields with the data related to your database.
 
 ```bash
+#Example of the ".env" file:
+
 PORT= [Port the server will run on]
 MYSQL_HOST= [The host of your machine, by default is 'localhost']
 MYSQL_USER= [Your username, by default MySQL uses the 'root' user]
