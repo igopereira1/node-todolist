@@ -40,12 +40,19 @@
 $ git clone https://github.com/igopereira1/node-todolist.git
 ```
 
-### After cloning the repository, it is necessary to create a MySQL database along with the necessary columns.
+### After cloning the repository, its recommended to create a MySQL container to be used by the application. To do this, just run the command below in the terminal.
+
+```bash 
+#Command to create a MySQL container
+docker run --name mysql -e MYSQL_ROOT_PASSWORD=root -p 3306:3306 -d mysql
+```
+
+### After creating the container, we need to access the MySQL terminal or a MySQL client like Workbench or DBeaver to create the database that will be used by the application.
 
 ```bash
 #Command to create a database in the MySQL terminal:
 
-$ CREATE DATABASE database_name;
+$ CREATE DATABASE todolist;
 ```
 
 ### Next, it is necessary to create the "tasks" table that will be used by the application.
